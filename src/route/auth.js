@@ -229,7 +229,11 @@ router.post('/recovery-confirm', function (req, res) {
 
 // ↙️ тут вводимо шлях (PATH) до сторінки
 router.get('/signup-confirm', function (req, res) {
-  const { renew } = req.query
+  const { renew, email } = req.query
+
+  if (renew) {
+    Confirm.create(email)
+  }
 
   // res.render генерує нам HTML сторінку
 
