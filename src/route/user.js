@@ -92,7 +92,7 @@ router.get('/user-item-data', function (req, res) {
     })
   }
 
-  const user = User.getByID(Number(id))
+  const user = User.getById(Number(id))
 
   if (!user) {
     return res.status(400).json({
